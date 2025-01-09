@@ -1,0 +1,12 @@
+version = 2
+
+[plugins."io.containerd.snapshotter.v1.stargz"]
+root_path = "/var/lib/containerd-stargz-grpc/"
+disable_verification = false
+metadata_store = "memory"
+
+[plugins."io.containerd.snapshotter.v1.stargz".blob]
+check_always = true
+
+[plugins."io.containerd.snapshotter.v1.stargz".registry.mirrors."registry-integration.test"]
+endpoint = ["http://registry-alt.test:5000"]

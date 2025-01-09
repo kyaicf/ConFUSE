@@ -1,0 +1,43 @@
+version: "3.4"
+services:
+  containerd_demo:
+    build:
+      context: ../../
+      target: demo
+      args:
+        NO_PROXY: "${NO_PROXY}"
+        HTTP_PROXY: "${HTTP_PROXY}"
+        HTTPS_PROXY: "${HTTPS_PROXY}"
+        http_proxy: "${http_proxy}"
+        https_proxy: "${https_proxy}"
+    container_name: containerd_demo
+    privileged: true
+    stdin_open: true
+    tty: true
+    working_dir: /go/src/github.com/containerd/stargz-snapshotter
+    entrypoint: /bin/bash
+    environment:
+    - NO_PROXY=127.0.0.1,localhost,registry2:5000
+    - HTTP_PROXY=${HTTP_PROXY}
+    - HTTPS_PROXY=${HTTPS_PROXY}
+    - http_proxy=${http_proxy}
+    - https_proxy=${https_proxy}
+    - GOPATH=/go
+    tmpfs:
+    - /tmp:exec,mode=777
+    volumes:
+    - /dev/fuse:/dev/fuse
+    - "${GOPATH}/src/github.com/containerd/stargz-snapshotter:/go/src/github.com/containerd/stargz-snapshotter:ro"
+    - "demo-containerd-data:/var/lib/containerd"
+    - "demo-containerd-stargz-grpc-data:/var/lib/containerd-stargz-grpc"
+  registry2:
+    image: registry:2
+    container_name: registry2
+    environment:
+    - HTTP_PROXY=${HTTP_PROXY}
+    - HTTPS_PROXY=${HTTPS_PROXY}
+    - http_proxy=${http_proxy}
+    - https_proxy=${https_proxy}
+volumes:
+  demo-containerd-data:
+  demo-containerd-stargz-grpc-data:

@@ -1,0 +1,58 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+CMD	Makefile	/^CMD=containerd-stargz-grpc ctr-remote stargz-store$/;"	m
+CMD_BINARIES	Makefile	/^CMD_BINARIES=$(addprefix $(PREFIX),$(CMD))$/;"	m
+CMD_DESTDIR	Makefile	/^CMD_DESTDIR ?= \/usr\/local$/;"	m
+FORCE	Makefile	/^FORCE:$/;"	t
+FUSE_USE_VERSION	go-fuse/benchmark/statfs.cc	/^#define FUSE_USE_VERSION /;"	d	file:
+GO111MODULE_VALUE	Makefile	/^GO111MODULE_VALUE=auto$/;"	m
+GO_BUILD_LDFLAGS	Makefile	/^GO_BUILD_LDFLAGS ?= -s -w$/;"	m
+GO_LD_FLAGS	Makefile	/^GO_LD_FLAGS=-ldflags '$(GO_BUILD_LDFLAGS) -X $(PKG)\/version.Version=$(VERSION) -X $(PKG)\/versi/;"	m
+GetAttr	go-fuse/benchmark/statfs.cc	/^  int GetAttr(const char *name, struct stat *statbuf) {$/;"	f	class:StatFs	typeref:typename:int	file:
+PKG	Makefile	/^PKG=github.com\/containerd\/stargz-snapshotter$/;"	m
+PREFIX	Makefile	/^PREFIX ?= $(CURDIR)\/out\/$/;"	m
+REVISION	Makefile	/^REVISION=$(shell git rev-parse HEAD)$(shell if ! git diff --no-ext-diff --quiet --exit-code; the/;"	m
+StatFs	go-fuse/benchmark/statfs.cc	/^class StatFs {$/;"	c	file:
+VERSION	Makefile	/^VERSION=$(shell git describe --match 'v[0-9]*' --dirty='.m' --always --tags)$/;"	m
+all	Makefile	/^all: build$/;"	t
+all	go-fuse/benchmark/Makefile	/^all: cstatfs bulkstat.bin$/;"	t
+benchmark	Makefile	/^benchmark:$/;"	t
+build	Makefile	/^build: $(CMD)$/;"	t
+bulkstat.bin	go-fuse/benchmark/Makefile	/^bulkstat.bin: bulkstat\/main.go$/;"	t
+check	Makefile	/^check:$/;"	t
+clean	Makefile	/^clean:$/;"	t
+containerd-stargz-grpc	Makefile	/^containerd-stargz-grpc: FORCE$/;"	t
+cstatfs	go-fuse/benchmark/Makefile	/^cstatfs: statfs.cc$/;"	t
+ctr-remote	Makefile	/^ctr-remote: FORCE$/;"	t
+delay_usec	go-fuse/benchmark/statfs.cc	/^useconds_t delay_usec;$/;"	v	typeref:typename:useconds_t
+generate	Makefile	/^generate:$/;"	t
+global	go-fuse/benchmark/statfs.cc	/^StatFs *global;$/;"	v	typeref:typename:StatFs *
+global_getattr	go-fuse/benchmark/statfs.cc	/^int global_getattr(const char *name, struct stat *statbuf) {$/;"	f	typeref:typename:int
+install	Makefile	/^install:$/;"	t
+integration	Makefile	/^integration:$/;"	t
+is_dir_	go-fuse/benchmark/statfs.cc	/^  unordered_map<string, bool> is_dir_;$/;"	m	class:StatFs	typeref:typename:unordered_map<string,bool>	file:
+main	go-fuse/benchmark/statfs.cc	/^int main(int argc, char *argv[])$/;"	f	typeref:typename:int
+main	script/benchmark/hello-bench/src/gcc/main.c	/^int main(int argc, char *argv[]) {$/;"	f	typeref:typename:int
+readFrom	go-fuse/benchmark/statfs.cc	/^void StatFs::readFrom(const string& fn) {$/;"	f	class:StatFs	typeref:typename:void
+stargz-store	Makefile	/^stargz-store: FORCE$/;"	t
+test	Makefile	/^test:$/;"	t
+test-all	Makefile	/^test-all: test-root test$/;"	t
+test-cri-containerd	Makefile	/^test-cri-containerd:$/;"	t
+test-cri-o	Makefile	/^test-cri-o:$/;"	t
+test-criauth	Makefile	/^test-criauth:$/;"	t
+test-ipfs	Makefile	/^test-ipfs:$/;"	t
+test-k3s	Makefile	/^test-k3s:$/;"	t
+test-k3s-argo-workflow	Makefile	/^test-k3s-argo-workflow:$/;"	t
+test-kind	Makefile	/^test-kind:$/;"	t
+test-optimize	Makefile	/^test-optimize:$/;"	t
+test-podman	Makefile	/^test-podman:$/;"	t
+test-root	Makefile	/^test-root:$/;"	t
+uninstall	Makefile	/^uninstall:$/;"	t
+validate-generated	Makefile	/^validate-generated:$/;"	t
+validate-vendor	Makefile	/^validate-vendor:$/;"	t
+vendor	Makefile	/^vendor:$/;"	t

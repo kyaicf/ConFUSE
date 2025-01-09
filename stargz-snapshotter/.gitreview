@@ -1,0 +1,6 @@
+[gerrit]
+host=gerrit.kylin.com
+port=29418
+project=kylinai/stargz-snapshotter.git
+defaultbranch=stable
+

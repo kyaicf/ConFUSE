@@ -1,0 +1,30 @@
+# This is applied to `estargz` submodule as well.
+# https://golangci-lint.run/usage/configuration#config-file
+
+linters:
+  enable:
+    - staticcheck
+    - unconvert
+    - gofmt
+    - goimports
+    - revive
+    - ineffassign
+    - govet
+    - unused
+    - misspell
+  disable:
+    - errcheck
+
+run:
+  deadline: 4m
+
+issues:
+  exclude-rules:
+    - linters:
+        - revive
+      text: "unused-parameter"
+  exclude-dirs:
+    - docs
+    - images
+    - out
+    - script
